@@ -19,12 +19,12 @@ const port = process.env.PORT || 5000;
 
 
 // use middleware
-// app.use(cors());
+
 const corsOptions = {
     origin: 'https://pmx-estimator.netlify.app'
 };
 
-app.use(cors(corsOptions));
+app.use(cors()) && app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
