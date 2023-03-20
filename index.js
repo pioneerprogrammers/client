@@ -3,8 +3,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-
-
 // require openai
 const { Configuration, OpenAIApi } = require('openai');
 
@@ -21,12 +19,12 @@ const port = process.env.PORT || 5000;
 
 
 // use middleware
-app.use(cors());
-// const corsOptions = {
-//     origin: 'https://pmx-estimator.netlify.app'
-// };
+// app.use(cors());
+const corsOptions = {
+    origin: 'https://pmx-estimator.netlify.app/'
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
